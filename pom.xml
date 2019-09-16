@@ -25,6 +25,7 @@
         <slf4j.version>1.8.0-beta4</slf4j.version>
         <log4j.slf4j.impl.version>2.12.1</log4j.slf4j.impl.version>
         <mybatis.springboot.version>2.1.0</mybatis.springboot.version>
+        <junit.jupiter.version>5.5.2</junit.jupiter.version>
     </properties>
 
 </project>
