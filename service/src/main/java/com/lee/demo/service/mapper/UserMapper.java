@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author Administrator
+ * @author LCQ
  */
 @Mapper
 @Repository

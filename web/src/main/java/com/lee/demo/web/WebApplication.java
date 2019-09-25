@@ -1,4 +1,4 @@
-package com.lee.demo.service;
+package com.lee.demo.web;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -9,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @Slf4j
-public class ServiceApplication {
+public class WebApplication {
 
     public static void main(String[] args) {
-        new SpringApplication(ServiceApplication.class).run(args);
+        new SpringApplication(WebApplication.class).run(args);
         log.info("--------ServiceApplication started successfully--------");
-    }
+   }
 }

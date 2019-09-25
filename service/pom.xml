@@ -14,7 +14,8 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!-- log4j-slf4j-impl cannot be present with log4j-to-slf4j -->
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>

@@ -4,7 +4,7 @@ import com.lee.demo.api.common.Result;
 import com.lee.demo.api.dto.user.UserDto;
 
 /**
- * @author Administrator
+ * @author LCQ
  */
 public interface UserService {
     /**

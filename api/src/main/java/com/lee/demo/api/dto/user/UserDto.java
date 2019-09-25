@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author Administrator
+ * @author LCQ
  */
 @Data
 public class UserDto implements Serializable {
