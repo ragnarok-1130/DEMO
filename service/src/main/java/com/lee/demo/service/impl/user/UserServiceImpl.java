@@ -1,10 +1,10 @@
-package com.lee.demo.service.intf.user;
+package com.lee.demo.service.impl.user;
 
 import com.lee.demo.api.common.Result;
 import com.lee.demo.api.dto.user.UserDto;
 import com.lee.demo.service.entity.user.UserEntity;
+import com.lee.demo.service.intf.user.UserService;
 import com.lee.demo.service.mapper.UserMapper;
-import com.lee.demo.service.impl.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,15 +32,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public Result register(UserDto userDto) {
         try {
+            if (userDto == null) {
+                return Result.createFailResult(null, "参数为空");
+            }
             UserEntity userEntity = new UserEntity();
             BeanUtils.copyProperties(userDto, userEntity);
             if (userMapper.insertSelective(userEntity) > 0) {
-                return new Result<>(true, null, "注册成功");
+                return Result.createSuccessResult(userEntity, "注册成功");
             } else {
-                return new Result<>(false, null, "注册失败");
+                return Result.createFailResult(null, "注册失败");
             }
-        }catch (Exception e){
-            return new Result<>(false, null, "注册操作出现异常");
+        } catch (Exception e) {
+            return Result.createFailResult(null, "注册操作出现异常");
         }
     }
 }

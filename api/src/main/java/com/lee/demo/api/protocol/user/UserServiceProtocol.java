@@ -1,4 +1,4 @@
-package com.lee.demo.service.impl.user;
+package com.lee.demo.api.protocol.user;
 
 import com.lee.demo.api.common.Result;
 import com.lee.demo.api.dto.user.UserDto;
@@ -6,7 +6,8 @@ import com.lee.demo.api.dto.user.UserDto;
 /**
  * @author LCQ
  */
-public interface UserService {
+public interface UserServiceProtocol {
+
     /**
      * 根据userId查询用户信息
      * @param userId
@@ -20,4 +21,5 @@ public interface UserService {
      * @return
      */
     Result register(UserDto userDto);
+
 }

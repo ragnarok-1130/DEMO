@@ -36,6 +36,31 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${dubbo.version}</version>
+            <exclusions>
+            </exclusions>
+        </dependency>
+
+        <!-- java.lang.NoClassDefFoundError: org/apache/curator/framework/CuratorFrameworkFactory -->
+        <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-framework -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>${curator.version}</version>
+        </dependency>
+
+        <!-- java.lang.NoClassDefFoundError: org/apache/curator/framework/recipes/cache/TreeCacheListener -->
+        <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-framework -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${curator.version}</version>
+        </dependency>
+
         <!-- JUnit5 依赖 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
