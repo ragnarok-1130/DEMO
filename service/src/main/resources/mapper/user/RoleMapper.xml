@@ -90,4 +90,11 @@
         </trim>
         WHERE ID = #{id}
     </update>
+
+    <select id="queryPermissionByUserId" resultType="string">
+        SELECT rp.PERMISSION
+        FROM `t_user_role` ur
+        LEFT JOIN `t_role_permission` rp ON rp.ROLE_ID = ur.ROLE_ID
+        WHERE ur.USER_ID = #{userId}
+    </select>
 </mapper>

@@ -6,6 +6,8 @@ import com.lee.demo.service.mapper.RoleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author LCQ
  */
@@ -32,5 +34,10 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public int updateRole(RoleEntity role) {
         return roleMapper.updateAllById(role);
+    }
+
+    @Override
+    public List<String> queryPermissionByUserId(Long roleId) {
+        return roleMapper.queryPermissionByUserId(roleId);
     }
 }

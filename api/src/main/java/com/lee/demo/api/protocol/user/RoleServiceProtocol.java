@@ -1,34 +1,34 @@
-package com.lee.demo.service.intf.user;
+package com.lee.demo.api.protocol.user;
 
-import com.lee.demo.service.entity.user.RoleEntity;
+import com.lee.demo.api.dto.user.RoleDto;
 
 import java.util.List;
 
 /**
  * @author LCQ
  */
-public interface RoleService {
+public interface RoleServiceProtocol {
 
     /**
      * 根据Id查询角色
      * @param id
      * @return
      */
-    RoleEntity selectById(Long id);
+    RoleDto selectById(Long id);
 
     /**
      * 添加角色
      * @param role
      * @return
      */
-    int addRole(RoleEntity role);
+    int addRole(RoleDto role);
 
     /**
      * 更新角色信息
      * @param role
      * @return
      */
-    int updateRole(RoleEntity role);
+    int updateRole(RoleDto role);
 
     /**
      * 根据用户ID查询权限

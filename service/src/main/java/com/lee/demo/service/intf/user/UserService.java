@@ -20,4 +20,11 @@ public interface UserService {
      * @return
      */
     Result register(UserDto userDto);
+
+    /**
+     * 根据username查询用户
+     * @param username
+     * @return
+     */
+    UserDto selectUserByUserName(String username);
 }

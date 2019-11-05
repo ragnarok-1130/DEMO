@@ -46,4 +46,9 @@ public class UserServiceImpl implements UserService {
             return Result.createFailResult(null, "注册操作出现异常");
         }
     }
+
+    @Override
+    public UserDto selectUserByUserName(String username) {
+        return userMapper.selectUserByUserName(username);
+    }
 }

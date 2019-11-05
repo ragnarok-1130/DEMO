@@ -51,4 +51,10 @@ public interface UserMapper {
      */
     int updateSelectiveById(UserEntity user);
 
+    /**
+     * 根据username查询用户信息
+     * @param username
+     * @return
+     */
+    UserDto selectUserByUserName(@Param("username") String username);
 }

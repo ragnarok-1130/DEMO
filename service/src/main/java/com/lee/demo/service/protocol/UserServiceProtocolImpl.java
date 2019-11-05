@@ -31,4 +31,9 @@ public class UserServiceProtocolImpl implements UserServiceProtocol {
     public Result register(UserDto userDto) {
         return userService.register(userDto);
     }
+
+    @Override
+    public UserDto selectUserByUserName(String username) {
+        return userService.selectUserByUserName(username);
+    }
 }

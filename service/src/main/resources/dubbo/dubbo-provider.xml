@@ -27,4 +27,6 @@
 
     <dubbo:service interface="com.lee.demo.api.protocol.user.UserServiceProtocol" ref="userServiceProtocol"/>
 
+    <dubbo:service interface="com.lee.demo.api.protocol.user.RoleServiceProtocol" ref="roleServiceProtocol"/>
+
 </beans>

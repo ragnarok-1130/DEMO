@@ -28,6 +28,7 @@
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <dubbo.version>2.7.3</dubbo.version>
         <curator.version>4.2.0</curator.version>
+        <shiro.version>1.4.1</shiro.version>
     </properties>
 
 </project>

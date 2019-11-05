@@ -2,7 +2,10 @@ package com.lee.demo.service.mapper;
 
 import com.lee.demo.service.entity.user.RoleEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author LCQ
@@ -46,4 +49,11 @@ public interface RoleMapper {
      * @return
      */
     int updateSelectiveById(RoleEntity role);
+
+    /**
+     * 根据用户ID查询权限
+     * @param userId
+     * @return
+     */
+    List<String> queryPermissionByUserId(@Param("userId") Long userId);
 }

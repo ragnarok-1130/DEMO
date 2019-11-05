@@ -52,6 +52,12 @@
             <version>${curator.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
         <!-- log日志 -->
         <dependency>
             <groupId>org.slf4j</groupId>
