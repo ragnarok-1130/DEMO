@@ -11,6 +11,7 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
@@ -48,7 +49,8 @@ public class MyRealm extends AuthorizingRealm {
             log.info("用户:{} 不存在", token.getUsername());
             throw new AuthenticationException("用户名或密码不正确！");
         }
-        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(),getName());
+        String salt = user.getUsername() + user.getSalt();
+        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), ByteSource.Util.bytes(salt), getName());
         return authenticationInfo;
     }
 }

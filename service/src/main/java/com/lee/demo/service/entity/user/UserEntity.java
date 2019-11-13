@@ -20,6 +20,10 @@ public class UserEntity {
      */
     private String password;
     /**
+     * 盐值
+     */
+    private String salt;
+    /**
      * 显示名称
      */
     private String displayName;

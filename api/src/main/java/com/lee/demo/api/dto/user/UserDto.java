@@ -24,6 +24,10 @@ public class UserDto implements Serializable {
      */
     private String password;
     /**
+     * 盐值
+     */
+    private String salt;
+    /**
      * 显示名称
      */
     private String displayName;

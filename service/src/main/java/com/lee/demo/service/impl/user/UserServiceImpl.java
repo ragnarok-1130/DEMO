@@ -35,10 +35,14 @@ public class UserServiceImpl implements UserService {
             if (userDto == null) {
                 return Result.createFailResult(null, "参数为空");
             }
+            UserDto user = userMapper.selectUserByUserName(userDto.getUsername());
+            if (user != null) {
+                return Result.createFailResult(null, "用户名已存在");
+            }
             UserEntity userEntity = new UserEntity();
             BeanUtils.copyProperties(userDto, userEntity);
             if (userMapper.insertSelective(userEntity) > 0) {
-                return Result.createSuccessResult(userEntity, "注册成功");
+                return Result.createSuccessResult("注册成功");
             } else {
                 return Result.createFailResult(null, "注册失败");
             }

@@ -29,6 +29,7 @@
         <dubbo.version>2.7.3</dubbo.version>
         <curator.version>4.2.0</curator.version>
         <shiro.version>1.4.1</shiro.version>
+        <lang3.version>3.9</lang3.version>
     </properties>
 
 </project>

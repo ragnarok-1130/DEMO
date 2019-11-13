@@ -1,5 +1,6 @@
 package com.lee.demo.web.config;
 
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -18,10 +19,23 @@ public class ShiroConfig {
     @Bean
     public SecurityManager securityManager(MyRealm realm){
         DefaultWebSecurityManager securityManager= new DefaultWebSecurityManager();
+        //设置使用的密码匹配器   不设置默认为SimpleCredentialsMatcher
+        realm.setCredentialsMatcher(hashedCredentialsMatcher());
         securityManager.setRealm(realm);
         return securityManager;
     }
 
+    @Bean
+    public HashedCredentialsMatcher hashedCredentialsMatcher(){
+        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
+        //设置散列算法
+        hashedCredentialsMatcher.setHashAlgorithmName("md5");
+        //设置散列迭代次数
+        hashedCredentialsMatcher.setHashIterations(2);
+        //使用hex编码时置为true,使用Base64时置为false    不设置时默认为true
+        hashedCredentialsMatcher.setStoredCredentialsHexEncoded(false);
+        return hashedCredentialsMatcher;
+    }
 
     @Bean(name = "shiroFilter")
     public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager){
