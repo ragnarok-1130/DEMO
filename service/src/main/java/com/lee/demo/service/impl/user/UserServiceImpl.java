@@ -1,5 +1,6 @@
 package com.lee.demo.service.impl.user;
 
+import com.alibaba.fastjson.JSONObject;
 import com.lee.demo.api.common.Result;
 import com.lee.demo.api.dto.user.UserDto;
 import com.lee.demo.service.entity.user.UserEntity;
@@ -8,7 +9,11 @@ import com.lee.demo.service.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author LCQ
@@ -19,9 +24,16 @@ public class UserServiceImpl implements UserService {
 
     private UserMapper userMapper;
 
+    private RedisTemplate<String, String> redisTemplate;
+
     @Autowired
     public void setUserMapper(UserMapper userMapper) {
         this.userMapper = userMapper;
+    }
+
+    @Autowired
+    public void setRedisTemplate(RedisTemplate<String, String> redisTemplate) {
+        this.redisTemplate = redisTemplate;
     }
 
     @Override
@@ -54,5 +66,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto selectUserByUserName(String username) {
         return userMapper.selectUserByUserName(username);
+    }
+
+    @Override
+    public List<UserDto> queryList(Map<String, Object> params) {
+        List<UserDto> userDtos = userMapper.queryList(params);
+        return userDtos;
     }
 }

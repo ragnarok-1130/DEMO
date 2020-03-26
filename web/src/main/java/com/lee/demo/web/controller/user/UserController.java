@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author LCQ
  */
@@ -42,5 +45,11 @@ public class UserController {
         userDto.setSalt(salt);
         userDto.setPassword(encryptedPwd);
         return userServiceProtocol.register(userDto);
+    }
+
+    @RequestMapping("/queryList")
+    public List<UserDto> queryList(@RequestBody Map<String,Object> params){
+        List<UserDto> userDtos = userServiceProtocol.queryList(params);
+        return userDtos;
     }
 }

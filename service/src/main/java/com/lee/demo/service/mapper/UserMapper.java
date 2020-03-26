@@ -6,6 +6,9 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author LCQ
  */
@@ -57,4 +60,11 @@ public interface UserMapper {
      * @return
      */
     UserDto selectUserByUserName(@Param("username") String username);
+
+    /**
+     * 查询用户列表
+     * @param params
+     * @return
+     */
+    List<UserDto> queryList(Map<String, Object> params);
 }

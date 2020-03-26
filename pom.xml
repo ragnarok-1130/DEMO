@@ -25,11 +25,14 @@
         <slf4j.version>1.8.0-beta4</slf4j.version>
         <log4j.slf4j.impl.version>2.12.1</log4j.slf4j.impl.version>
         <mybatis.springboot.version>2.1.0</mybatis.springboot.version>
+        <redis.springboot.version>2.1.8.RELEASE</redis.springboot.version>
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <dubbo.version>2.7.3</dubbo.version>
         <curator.version>4.2.0</curator.version>
         <shiro.version>1.4.1</shiro.version>
         <lang3.version>3.9</lang3.version>
+        <commons.version>2.6.0</commons.version>
+        <fastjson.version>1.2.67</fastjson.version>
     </properties>
 
 </project>

@@ -3,6 +3,9 @@ package com.lee.demo.service.intf.user;
 import com.lee.demo.api.common.Result;
 import com.lee.demo.api.dto.user.UserDto;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author LCQ
  */
@@ -27,4 +30,11 @@ public interface UserService {
      * @return
      */
     UserDto selectUserByUserName(String username);
+
+    /**
+     * 查询用户列表
+     * @param params
+     * @return
+     */
+    List<UserDto> queryList(Map<String, Object> params);
 }

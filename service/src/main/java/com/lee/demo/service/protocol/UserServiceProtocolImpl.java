@@ -8,6 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author LCQ
  */
@@ -35,5 +38,10 @@ public class UserServiceProtocolImpl implements UserServiceProtocol {
     @Override
     public UserDto selectUserByUserName(String username) {
         return userService.selectUserByUserName(username);
+    }
+
+    @Override
+    public List<UserDto> queryList(Map<String, Object> params) {
+        return userService.queryList(params);
     }
 }

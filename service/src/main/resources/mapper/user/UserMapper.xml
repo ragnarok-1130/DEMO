@@ -107,4 +107,11 @@
         FROM `t_user` t
         WHERE t.USERNAME = #{username}
     </select>
+
+    <select id="queryList" resultType="com.lee.demo.api.dto.user.UserDto">
+        SELECT
+        <include refid="COLUMN_LIST"></include>
+        FROM `t_user` t
+        WHERE 1 = 1
+    </select>
 </mapper>
